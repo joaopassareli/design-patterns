@@ -1,15 +1,24 @@
 <?php
 
 use Project\DesignPattern\Orcamento;
+use Project\DesignPattern\Impostos\Iss;
 use Project\DesignPattern\Impostos\Icms;
 use Project\DesignPattern\CalculadoraImpostos;
-use Project\DesignPattern\Impostos\Iss;
+use Project\DesignPattern\CalculadoraDescontos;
 
 require 'vendor/autoload.php';
 
-$calculadora = new CalculadoraImpostos();
+// $calculadora = new CalculadoraImpostos();
+
+// $orcamento = new Orcamento();
+// $orcamento->valor = 100;
+
+// echo 'Imposto = ' . $calculadora->calcula($orcamento, new Iss()) . PHP_EOL;
+
+$calculadoraDesconto = new CalculadoraDescontos();
 
 $orcamento = new Orcamento();
-$orcamento->valor = 100;
+$orcamento->valor = 600;
+$orcamento->qtdItens = 5;
 
-echo $calculadora->calcula($orcamento, new Iss());
+echo $calculadoraDesconto->calculaDescontos($orcamento);
