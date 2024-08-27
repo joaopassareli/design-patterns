@@ -5,11 +5,14 @@ namespace Project\DesignPattern;
 use Project\DesignPattern\Pedido;
 use Project\DesignPattern\Orcamento;
 use Project\DesignPattern\GerarPedido;
+use SplObserver;
 
-class GerarPedidoHandler
+class GerarPedidoHandler implements \SplSubject
 {
+    /** @var SplObserver[]  */
+    private array $acoesAposGerarPedido = [];
 
-    public function __construct(/** GerarPedido, PedidosRepository */){}
+    public Pedido $pedido;
 
     public function execute(GerarPedido $gerarPedido)
     {
@@ -21,14 +24,24 @@ class GerarPedidoHandler
         $pedido->dataFinalizacao = new \DateTimeImmutable();
         $pedido->nomeCliente = $gerarPedido->getNomeCliente();
         $pedido->orcamento = $orcamento;
-    
-        //Pedidos repository
-        echo "Cria pedido no bando de dados ". PHP_EOL;
-        //Mail service
-        echo "Envia e-mail para o cliente". PHP_EOL;
-        //Log service
-        echo "Log de criação do pedido". PHP_EOL;
+        $this->pedido = $pedido;
+        $this->notify();
     }
 
+    public function attach(SplObserver $observer): void
+    {
+        $this->acoesAposGerarPedido[] = $observer;
+    }
 
+    public function detach(SplObserver $observer): void
+    {
+        // $this->acoesAposGerarPedido[] = $observer;
+    }
+
+    public function notify(): void
+    {
+        foreach ($this->acoesAposGerarPedido as $acao) {
+            $acao->update($this);
+        }
+    }
 }
