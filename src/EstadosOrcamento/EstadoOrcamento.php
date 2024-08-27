@@ -4,7 +4,7 @@ namespace Project\DesignPattern\EstadosOrcamento;
 
 use Project\DesignPattern\Orcamento;
 
-abstract class EstadoOrcamento 
+abstract class EstadoOrcamento
 {
     /**
      * @throws \DomainException
