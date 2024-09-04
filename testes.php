@@ -21,4 +21,4 @@ $orcamento = new Orcamento();
 $orcamento->valor = 600;
 $orcamento->qtdItens = 5;
 
-echo $calculadoraDesconto->calculaDescontos($orcamento);
+echo $calculadoraDesconto->calculaDescontos($orcamento, new Icms());

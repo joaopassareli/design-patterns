@@ -5,9 +5,9 @@ namespace Project\DesignPattern\Impostos;
 use Project\DesignPattern\Orcamento;
 use Project\DesignPattern\Impostos\Imposto;
 
-abstract class ImpostoCom2Aliquotas implements Imposto
+abstract class ImpostoCom2Aliquotas extends Imposto
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    public function realizaCalculoEspecifico(Orcamento $orcamento): float
     {
         if ($this->deveCalcularTaxaMaxima($orcamento)) {
             return $this->calcularTaxaMaxima($orcamento);
