@@ -3,10 +3,10 @@
 namespace Project\DesignPattern;
 
 use Project\DesignPattern\Orcamento;
+use Project\DesignPattern\DadosExtrinsecosPedido;
 
 class Pedido
 {
-    public string $nomeCliente;
-    public \DateTimeInterface $dataFinalizacao;
+    public DadosExtrinsecosPedido $dados;
     public Orcamento $orcamento;
 }

@@ -11,11 +11,13 @@ class CalculadoraDescontos
     public function calculaDescontos(Orcamento $orcamento): float
     {
         $cadeiaDeDescontos = new DescontoMaisDe5Itens(
-            new DescontoMaisDe500Reais(
-                new SemDesconto()
-                )
+            new DescontoMaisDe500Reais(new SemDesconto())
         );
 
-        return $cadeiaDeDescontos->calculaDesconto($orcamento);
+        $descontoCalculado = $cadeiaDeDescontos->calculaDesconto($orcamento);
+        $logDesconto = new LogDesconto();
+        $logDesconto->informar($descontoCalculado);
+
+        return $descontoCalculado;
     }
 }

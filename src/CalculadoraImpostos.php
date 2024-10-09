@@ -1,4 +1,5 @@
 <?php
+
 namespace Project\DesignPattern;
 
 use Project\DesignPattern\Impostos\Imposto;
