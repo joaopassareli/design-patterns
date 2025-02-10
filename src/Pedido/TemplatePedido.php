@@ -1,8 +1,8 @@
 <?php
 
-namespace Project\DesignPattern;
+namespace Project\DesignPattern\Pedido;
 
-class DadosExtrinsecosPedido
+class TemplatePedido
 {
     private string $nomeCliente;
     private \DateTimeInterface $dataFinalizacao;
