@@ -1,6 +1,6 @@
 <?php
 
-namespace Log;
+namespace Project\DesignPattern\Log;
 
 use Project\DesignPattern\Log\Logger;
 use Project\DesignPattern\Log\LogManager;

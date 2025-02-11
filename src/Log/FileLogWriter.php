@@ -8,12 +8,12 @@ class FileLogWriter implements Logger
 
     public function __construct(string $caminhoArquivo)
     {
-        $this->arquivo =fopen($caminhoArquivo, 'a+');
+        $this->arquivo = fopen($caminhoArquivo, 'a+');
     }
 
     public function write(string $mensagem): void
     {
-        fwrite($this->arquivo, $mensagem);
+        fwrite($this->arquivo, $mensagem . PHP_EOL);
     }
 
     public function __destruct()

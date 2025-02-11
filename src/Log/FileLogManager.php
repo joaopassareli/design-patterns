@@ -2,13 +2,11 @@
 
 namespace Project\DesignPattern\Log;
 
-use Project\DesignPattern\Log\LogWriter;
-
 class FileLogManager extends LogManager
 {
     private string $caminhoArquivo;
 
-    public function __contruct(string $caminhoArquivo)
+    public function __construct(string $caminhoArquivo)
     {
         $this->caminhoArquivo = $caminhoArquivo;
     }
