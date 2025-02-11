@@ -1,9 +1,8 @@
 <?php
 
-use Project\DesignPattern\Venda\VendaProdutoFactory;
-use Project\DesignPattern\Venda\VendaServicoFactory;
+use Project\DesignPattern\Venda\{VendaProdutoFactory, VendaServicoFactory};
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $fabricaVenda = new VendaProdutoFactory(1000);
 $venda = $fabricaVenda->criarVenda();
