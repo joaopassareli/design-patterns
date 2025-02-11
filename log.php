@@ -1,7 +1,6 @@
 <?php
 
-use Project\DesignPattern\Log\FileLogManager;
-use Project\DesignPattern\Log\StdoutLogManager;
+use Project\DesignPattern\Log\{FileLogManager, StdoutLogManager};
 
 require 'vendor/autoload.php';
 
